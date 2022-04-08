@@ -35,3 +35,13 @@ contract CallTestContract {
         return TestContract(_addr).getValue();
     }
 }
+
+
+
+// 1. TestContract test ---> test.functionCall()
+// 2. address test --->  TestContract test ---> test.functionCall()
+// 3. address test ---> TestContract(test).functionCall()
+// 4. address test, uint256 num ---> TestContract(test).functionCall{value: msg.value}(num)
+// 5. TestContract test, uint256 num ---> uint returnVal = test.functionCall{value: msg.value}(num)
+// 6. TestContract test ---> uint returnVal = test.functionCall{value: msg.value}()
+// 7. address test ---> return TestContract(test).functionCall()
