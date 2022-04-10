@@ -33,3 +33,8 @@ contract TestMultiDelegatecall is MultiDelegatecall{
         return 111;
     }
 }
+
+
+// Why use Multi Delegate Call ?
+// It carries the context: Example -> msg.sender calls func1 in contract1, which calls func2 in contract2 .
+// Now, the msg.sender for func2 will still be OG msg.sender, and not contract1
